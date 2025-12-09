@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Lock, ArrowRight, Zap } from 'lucide-react';
+import { Mail, Lock, ArrowRight, Zap, Phone, CreditCard, Sparkles } from 'lucide-react';
 import { useAuthStore } from '../store/authStore';
 import { useLanguageStore } from '../store/languageStore';
 import { Input } from '../components/UI/Input';
@@ -75,12 +75,41 @@ export const LoginPage = () => {
         <div className="absolute top-6 right-6 z-50">
            <LanguageSwitcher />
         </div>
-        <div className="relative z-10 w-full max-w-md p-8 bg-cyber-glass backdrop-blur-xl border border-cyber-cyan/30 rounded-2xl text-center shadow-[0_0_50px_rgba(0,217,255,0.1)] animate-in fade-in zoom-in duration-500 mx-4">
+        <div className="relative z-10 w-full max-w-lg p-8 bg-cyber-glass backdrop-blur-xl border border-cyber-cyan/30 rounded-2xl text-center shadow-[0_0_50px_rgba(0,217,255,0.1)] animate-in fade-in zoom-in duration-500 mx-4">
           <div className="w-20 h-20 bg-cyber-cyan/20 rounded-full flex items-center justify-center mx-auto mb-6 border border-cyber-cyan">
             <Zap className="text-cyber-cyan" size={40} />
           </div>
           <h2 className="text-3xl font-heading font-bold mb-2">{t('welcomeBack')}</h2>
           <p className="text-gray-300 mb-8">{t('accessGranted')} <span className="text-cyber-cyan font-mono">{user.email}</span></p>
+          
+          {/* Contact & Payment Info Card */}
+          <div className="bg-cyber-dark/50 border border-cyber-glassBorder rounded-xl p-6 mb-6 text-start relative overflow-hidden group">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-cyber-magenta/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
+            
+            <div className="relative z-10 space-y-4">
+              <div>
+                <p className="text-gray-400 text-sm mb-1">{t('contactLabel')}</p>
+                <div className="flex items-center gap-3 text-cyber-cyan">
+                  <Phone size={20} />
+                  <span className="text-xl font-mono font-bold tracking-wider" dir="ltr">{t('phoneNumber')}</span>
+                </div>
+              </div>
+              
+              <div className="h-px w-full bg-white/10" />
+              
+              <div className="flex items-center gap-3 text-cyber-magenta">
+                <CreditCard size={20} />
+                <span className="font-medium">{t('paymentLabel')}</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Demo Disclaimer */}
+          <div className="mb-8 p-3 rounded-lg bg-cyber-cyan/5 border border-cyber-cyan/20 text-cyber-cyan/90 text-sm flex items-start gap-3 text-start">
+             <Sparkles className="shrink-0 mt-0.5" size={16} />
+             <p>{t('demoMessage')}</p>
+          </div>
+
           <Button onClick={logout} variant="secondary">
             {t('disconnect')}
           </Button>

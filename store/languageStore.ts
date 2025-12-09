@@ -26,7 +26,11 @@ const translations: Record<Language, Record<string, string>> = {
     errorEmail: "Please enter a valid email",
     errorPasswordLength: "Password must be at least 6 characters",
     processing: "Processing...",
-    titleSuffix: "Login" 
+    titleSuffix: "Login",
+    contactLabel: "Tell Zaher this is my phone number to contact:",
+    phoneNumber: "+966 55 123 4567",
+    paymentLabel: "And we can handle payment via Mostaql web.",
+    demoMessage: "Tell him this is just a demo. We can make the color you want and the shape you want."
   },
   ar: {
     welcomeBack: "مرحباً بعودتك",
@@ -44,7 +48,11 @@ const translations: Record<Language, Record<string, string>> = {
     errorEmail: "يرجى إدخال بريد إلكتروني صالح",
     errorPasswordLength: "يجب أن تكون كلمة المرور 6 أحرف على الأقل",
     processing: "جارٍ المعالجة...",
-    titleSuffix: "تسجيل الدخول"
+    titleSuffix: "تسجيل الدخول",
+    contactLabel: "أخبر زاهر أن هذا هو رقم هاتفي للتواصل:",
+    phoneNumber: "+966 55 123 4567",
+    paymentLabel: "ويمكننا إتمام الدفع عبر موقع مستقل.",
+    demoMessage: "أخبره أن هذا مجرد عرض تجريبي. يمكننا تعديل الألوان والأشكال حسب رغبتك."
   }
 };
 
